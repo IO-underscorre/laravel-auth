@@ -20,7 +20,7 @@ class PostsTableSeeder extends Seeder
 
             $new_post->title = $faker->sentence();
             $new_post->slug = Helper::generateSlug($new_post->title, Post::class);
-            $new_post->body = $faker->sentence();
+            $new_post->body = $faker->paragraph();
             $new_post->reading_time = Helper::getReadingTime($new_post->body);
             $new_post->is_archived = false;
 
