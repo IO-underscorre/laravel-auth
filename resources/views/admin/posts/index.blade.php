@@ -19,9 +19,7 @@
 
                             <th scope="col" class="text-primary col-2">Title</th>
 
-                            <th scope="col" class="text-primary col-4">Body</th>
-
-                            <th scope="col" class="text-primary text-center col-1">Reading Time</th>
+                            <th scope="col" class="text-primary col-5">Body</th>
 
                             <th scope="col" class="text-primary text-center col-1">Archived</th>
 
@@ -35,11 +33,7 @@
 
                                 <td class="col-2">{{ $post['title'] }}</td>
 
-                                <td class="col-4">{{ $post['body'] }}</td>
-
-                                <td class="text-center col-1">
-                                    {{ $post['reading_time'] . ' ' . ($post['reading_time'] == 1 ? 'minute' : 'minutes') }}
-                                </td>
+                                <td class="col-5">{{ $post['body'] }}</td>
 
                                 <td class="text-center col-1">{{ $post['is_archived'] ? 'Yes' : 'No' }}</td>
 
