@@ -18,6 +18,10 @@ a {
     text-decoration: inherit;
 }
 
+.bg-white {
+    scrollbar-color: $primary $white;
+}
+
 .bg-dark {
     scrollbar-color: $gray-600 $dark;
 }
