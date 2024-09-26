@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug', 155)->unique();
             $table->text('body');
             $table->tinyInteger('reading_time')->unsigned(); // Reading time in minutes
-            $table->boolean('is_archived');
+            $table->boolean('is_archived')->default(false);
             $table->timestamps();
         });
     }
