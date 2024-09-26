@@ -15,7 +15,7 @@
 
             <ul class="list-group list-group-flush d-flex">
                 <li class="list-group-item">
-                    <strong class="d-block ms-3">
+                    <strong class="d-block ms-3 text-primary">
                         Title:
                     </strong>
 
@@ -25,17 +25,7 @@
                 </li>
 
                 <li class="list-group-item">
-                    <strong class="d-block ms-3">
-                        Slug:
-                    </strong>
-
-                    <span class="fs-4">
-                        {{ $post['slug'] }}
-                    </span>
-                </li>
-
-                <li class="list-group-item">
-                    <strong class="d-block ms-3">
+                    <strong class="d-block ms-3 text-primary">
                         Body:
                     </strong>
 
@@ -45,7 +35,7 @@
                 </li>
 
                 <li class="list-group-item">
-                    <strong class="d-block ms-3">
+                    <strong class="d-block ms-3 text-primary">
                         Reading Time:
                     </strong>
 
@@ -55,7 +45,7 @@
                 </li>
 
                 <li class="list-group-item">
-                    <strong class="d-block ms-3">
+                    <strong class="d-block ms-3 text-primary">
                         Archived:
                     </strong>
 
@@ -65,7 +55,7 @@
                 </li>
 
                 <li class="list-group-item">
-                    <strong class="d-block ms-3">
+                    <strong class="d-block ms-3 text-primary">
                         Slug:
                     </strong>
 
