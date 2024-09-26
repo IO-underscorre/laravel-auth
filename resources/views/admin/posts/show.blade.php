@@ -74,9 +74,15 @@
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
 
-                        <a href="" type="button" class="btn btn-danger">
-                            <i class="fa-solid fa-trash"></i>
-                        </a>
+                        <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
+                            @csrf
+
+                            @method('DELETE')
+
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
                     </menu>
                 </li>
             </ul>
