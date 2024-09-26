@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Functions\Helper;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\PostRequest;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -23,15 +25,22 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        $data = $request->all();
+
+        $data['slug'] = Helper::generateSlug($data['title'], Post::class);
+        $data['reading_time'] = Helper::getReadingTime($data['body']);
+
+        $new_post = Post::create($data);
+
+        return redirect()->route('admin.posts.show', $new_post);
     }
 
     /**
@@ -51,15 +60,30 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        if (!isset($post)) {
+            abort(404);
+        }
+
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        if (!isset($post)) {
+            abort(404);
+        }
+
+        $data = $request->all();
+
+        $data['slug'] = Helper::generateSlug($data['title'], Post::class);
+        $data['reading_time'] = Helper::getReadingTime($data['body']);
+
+        $post->update($data);
+
+        return redirect()->route('admin.posts.show', $post);
     }
 
     /**

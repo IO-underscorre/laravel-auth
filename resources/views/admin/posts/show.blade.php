@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h2 class="fs-4 text-primary my-4">
-            Post Details
+            Post details
         </h2>
 
         <div class="card mb-3">
@@ -70,7 +70,7 @@
                             <i class="fa-solid fa-eye-slash"></i>
                         </a>
 
-                        <a href="" type="button" class="btn btn-warning">
+                        <a href="{{ route('admin.posts.edit', $post) }}" type="button" class="btn btn-warning">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
 
